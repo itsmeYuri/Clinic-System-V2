@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Clinic Management System laboratory staff workspace" />
+    <title>Laboratory Staff Dashboard | Clinic Management System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="admin.css" />
+    <link rel="stylesheet" href="laboratory.css" />
+  </head>
+  <body data-required-role="Laboratory Staff">
+    <div class="admin-app lab-app">
+      <aside class="sidebar" id="sidebar" aria-label="Laboratory navigation">
+        <div class="sidebar-head">
+          <a class="admin-brand" href="#dashboard" aria-label="Clinic Management System laboratory dashboard">
+            <span class="admin-brand-mark" data-icon="medical"></span>
+            <span><strong>Clinic Management</strong><small>Laboratory workspace</small></span>
+          </a>
+          <button class="icon-button close-sidebar" type="button" aria-label="Close navigation" data-close-sidebar data-icon-button="close"></button>
+        </div>
+
+        <nav class="sidebar-nav lab-sidebar-nav">
+          <p class="nav-label">Laboratory workspace</p>
+          <a href="#dashboard" class="nav-item active" data-page="dashboard" data-icon-name="dashboard"><span>Dashboard</span></a>
+          <a href="#orders" class="nav-item" data-page="orders" data-icon-name="orders"><span>Orders</span><b class="nav-count">18</b></a>
+          <a href="#upload" class="nav-item" data-page="upload" data-icon-name="upload"><span>Results Upload</span></a>
+          <a href="#review" class="nav-item" data-page="review" data-icon-name="review"><span>Result Review</span><b class="nav-count">9</b></a>
+          <a href="#operations" class="nav-item" data-page="operations" data-icon-name="activity"><span>Assigned Operations</span></a>
+          <a href="#patients" class="nav-item" data-page="patients" data-icon-name="users"><span>Patients</span></a>
+          <a href="#facilities" class="nav-item" data-page="facilities" data-icon-name="facility"><span>Assigned Facilities</span></a>
+          <a href="#queue" class="nav-item" data-page="queue" data-icon-name="queue"><span>Test Queue</span><b class="nav-count">24</b></a>
+          <p class="nav-label nav-label-spaced">Personal</p>
+          <a href="#notifications" class="nav-item" data-page="notifications" data-icon-name="bell"><span>Notifications</span><b class="nav-count">6</b></a>
+          <a href="#settings" class="nav-item" data-page="settings" data-icon-name="settings"><span>Settings</span></a>
+        </nav>
+
+        <div class="sidebar-clinic lab-illustration">
+          <svg viewBox="0 0 238 120" aria-hidden="true">
+            <ellipse cx="119" cy="108" rx="103" ry="8" fill="#bce9e5" />
+            <path d="M92 103h61M107 98h31" stroke="#78c9c3" stroke-width="4" stroke-linecap="round" />
+            <path d="m121 31 21 39h-42l21-39Z" fill="#fff" stroke="#2daea5" stroke-width="3" />
+            <path d="M108 65h26l8 15h-42l8-15Z" fill="#bfe9e6" />
+            <path d="M82 91h17M91 91V76l17-17M96 54l18 18" fill="none" stroke="#315f70" stroke-width="5" stroke-linecap="round" />
+            <circle cx="93" cy="49" r="10" fill="#0aa397" /><circle cx="102" cy="74" r="7" fill="#fff" stroke="#315f70" stroke-width="4" />
+            <rect x="155" y="54" width="12" height="42" rx="6" fill="#fff" stroke="#69c6be" stroke-width="3" /><path d="M157 77h8" stroke="#ef8b70" stroke-width="9" />
+            <rect x="174" y="63" width="12" height="33" rx="6" fill="#fff" stroke="#69c6be" stroke-width="3" /><path d="M176 82h8" stroke="#6c8bd5" stroke-width="9" />
+          </svg>
+          <strong>Precision in every result.</strong>
+          <span>Your assigned laboratory work, organized.</span>
+        </div>
+
+        <a class="sidebar-logout" href="index.html" data-icon-name="logout"><span>Log out</span></a>
+      </aside>
+
+      <div class="sidebar-scrim" data-close-sidebar></div>
+
+      <div class="admin-main">
+        <header class="topbar">
+          <div class="topbar-title">
+            <button class="icon-button menu-button" type="button" aria-label="Open navigation" aria-controls="sidebar" data-open-sidebar data-icon-button="menu"></button>
+            <div><span>Laboratory</span><h1 id="page-title">Laboratory Staff Dashboard</h1></div>
+          </div>
+          <div class="topbar-actions">
+            <label class="global-search">
+              <span class="sr-only">Global search</span><i data-icon="search"></i>
+              <input id="global-search" type="search" placeholder="Search orders, patients, results, facilities..." autocomplete="off" /><kbd>⌘ K</kbd>
+            </label>
+            <button class="icon-button notification-button" type="button" aria-label="View 6 unread notifications" data-go-page="notifications" data-icon-button="bell"><span class="notification-count">6</span></button>
+            <div class="profile-menu-wrap">
+              <button class="profile-button" type="button" aria-expanded="false" data-profile-toggle>
+                <span class="avatar avatar-purple">LS</span>
+                <span class="profile-copy"><strong>Lab Staff User</strong><small>Laboratory Staff</small></span>
+                <i data-icon="chevron"></i>
+              </button>
+              <div class="profile-dropdown" hidden>
+                <button type="button" data-go-page="settings" data-icon-name="user">My profile</button>
+                <button type="button" data-go-page="settings" data-icon-name="settings">Preferences</button>
+                <a href="index.html" data-icon-name="logout">Log out</a>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <main class="page-content" id="page-content" tabindex="-1"></main>
+      </div>
+
+      <div class="drawer-scrim" data-close-drawer></div>
+      <aside class="drawer" id="lab-drawer" aria-hidden="true" aria-labelledby="drawer-title">
+        <div class="drawer-head">
+          <div><p class="eyebrow">Laboratory Workspace</p><h2 id="drawer-title">Details</h2></div>
+          <button class="icon-button" type="button" aria-label="Close panel" data-close-drawer data-icon-button="close"></button>
+        </div>
+        <div class="drawer-body" id="drawer-body"></div>
+      </aside>
+
+      <div class="toast-region" aria-live="polite" aria-atomic="true"></div>
+    </div>
+    <script src="clinic-store.js"></script>
+    <script src="auth.js"></script>
+    <script src="laboratory.js"></script>
+  </body>
+</html>

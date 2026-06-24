@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Secure login and registration for the Clinic Management System"
+    />
+    <title>Clinic Management System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="auth-shell">
+      <section class="brand-panel" aria-labelledby="brand-title">
+        <a class="brand" href="#login" aria-label="Clinic Management System home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" role="img">
+              <path d="M13 5a3 3 0 0 1 6 0v8h8a3 3 0 0 1 0 6h-8v8a3 3 0 0 1-6 0v-8H5a3 3 0 0 1 0-6h8V5Z" />
+            </svg>
+          </span>
+          <span>
+            <strong id="brand-title">Clinic Management</strong>
+            <small>Healthcare made simpler</small>
+          </span>
+        </a>
+
+        <div class="illustration-wrap" aria-hidden="true">
+          <span class="orbit orbit-one"></span>
+          <span class="orbit orbit-two"></span>
+          <svg class="health-illustration" viewBox="0 0 600 470" role="img">
+            <defs>
+              <linearGradient id="coat" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#fff" />
+                <stop offset="1" stop-color="#e9f7f6" />
+              </linearGradient>
+              <linearGradient id="screen" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#0ca89b" />
+                <stop offset="1" stop-color="#087a86" />
+              </linearGradient>
+              <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+                <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#126b78" flood-opacity=".12" />
+              </filter>
+            </defs>
+
+            <ellipse cx="304" cy="429" rx="219" ry="22" fill="#79cfc8" opacity=".19" />
+            <circle cx="299" cy="215" r="174" fill="#d9f4f1" opacity=".82" />
+            <circle cx="299" cy="215" r="137" fill="#c5ebe8" opacity=".52" />
+
+            <g filter="url(#shadow)">
+              <rect x="73" y="98" width="158" height="109" rx="19" fill="#fff" />
+              <rect x="93" y="119" width="46" height="46" rx="13" fill="#e2f5f3" />
+              <path d="M112 128h8v10h10v8h-10v10h-8v-10h-10v-8h10v-10Z" fill="#08a394" />
+              <rect x="153" y="124" width="57" height="8" rx="4" fill="#b9d8d7" />
+              <rect x="153" y="142" width="42" height="7" rx="3.5" fill="#d6e8e7" />
+              <rect x="93" y="180" width="117" height="7" rx="3.5" fill="#e1eeee" />
+            </g>
+
+            <g filter="url(#shadow)">
+              <rect x="403" y="246" width="126" height="114" rx="19" fill="#fff" />
+              <circle cx="432" cy="276" r="14" fill="#dff4f2" />
+              <path d="M425 276h14M432 269v14" stroke="#079b90" stroke-width="4" stroke-linecap="round" />
+              <rect x="454" y="270" width="55" height="8" rx="4" fill="#bddad9" />
+              <path d="M425 317h15l8-16 13 32 10-23 7 7h30" fill="none" stroke="#1caaa0" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+            </g>
+
+            <g>
+              <path d="M245 168c0-42 25-75 66-75s69 31 69 75c0 47-31 80-68 80s-67-34-67-80Z" fill="#e7a478" />
+              <path d="M245 159c3-51 31-78 72-74 39 4 64 36 62 78-21-6-43-23-53-46-9 22-39 39-81 42Z" fill="#173e55" />
+              <path d="M265 175c-14-10-25 2-18 18 4 9 12 14 23 11M361 175c14-10 24 2 18 18-4 9-12 14-23 11" fill="#e7a478" />
+              <circle cx="284" cy="174" r="3.5" fill="#244a5b" />
+              <circle cx="340" cy="174" r="3.5" fill="#244a5b" />
+              <path d="M297 203c10 8 23 8 33 0" fill="none" stroke="#c56e5d" stroke-width="4" stroke-linecap="round" />
+              <path d="M266 246c-48 16-70 51-74 147h236c-5-96-27-131-76-147-20 21-65 21-86 0Z" fill="url(#coat)" />
+              <path d="m272 250 39 66 38-66" fill="none" stroke="#b9dddd" stroke-width="8" stroke-linejoin="round" />
+              <path d="M301 299h21l8 92h-38l9-92Z" fill="#0b938c" />
+              <path d="M222 374c28-8 56-14 84-13 31 1 59 8 87 15" fill="none" stroke="#d5eaea" stroke-width="5" stroke-linecap="round" />
+              <path d="M278 263c-23 1-39 17-39 38 0 20 15 33 33 33" fill="none" stroke="#345d6d" stroke-width="6" stroke-linecap="round" />
+              <path d="M347 263c21 1 37 17 37 38 0 15-8 26-21 31" fill="none" stroke="#345d6d" stroke-width="6" stroke-linecap="round" />
+              <circle cx="360" cy="336" r="12" fill="#fff" stroke="#345d6d" stroke-width="5" />
+              <path d="M220 392h183" stroke="#b8dedd" stroke-width="5" stroke-linecap="round" />
+            </g>
+          </svg>
+        </div>
+
+        <div class="brand-copy">
+          <p class="eyebrow">Connected care, every day</p>
+          <h1>One place for better patient care.</h1>
+          <p>Securely manage appointments, health records, and your care team from one simple workspace.</p>
+          <div class="trust-row">
+            <span>
+              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m6.8 10 2 2 4.7-4.7" /><circle cx="10" cy="10" r="8" /></svg>
+              Secure access
+            </span>
+            <span>
+              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m6.8 10 2 2 4.7-4.7" /><circle cx="10" cy="10" r="8" /></svg>
+              Patient focused
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <section class="form-panel">
+        <div class="mobile-brand">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32"><path d="M13 5a3 3 0 0 1 6 0v8h8a3 3 0 0 1 0 6h-8v8a3 3 0 0 1-6 0v-8H5a3 3 0 0 1 0-6h8V5Z" /></svg>
+          </span>
+          <span><strong>Clinic Management</strong><small>Healthcare made simpler</small></span>
+        </div>
+
+        <div class="form-card" id="login-screen">
+          <header class="form-header">
+            <span class="section-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M20 21a8 8 0 0 0-16 0M12 13a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z" /></svg>
+            </span>
+            <p class="eyebrow">Clinic Management System</p>
+            <h2>Welcome back</h2>
+            <p>Sign in to securely access your clinic workspace.</p>
+          </header>
+
+          <div class="status-message" role="status" aria-live="polite"></div>
+
+          <form id="login-form" novalidate>
+            <div class="field">
+              <label for="login-identifier">Email or username</label>
+              <div class="input-wrap">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4zM4 7l8 6 8-6" /></svg>
+                <input id="login-identifier" name="identifier" type="text" autocomplete="username" placeholder="you@example.com" required />
+              </div>
+              <p class="field-error" id="login-identifier-error"></p>
+            </div>
+
+            <div class="field">
+              <div class="label-row">
+                <label for="login-password">Password</label>
+                <a href="#forgot-password">Forgot password?</a>
+              </div>
+              <div class="input-wrap">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2" /><path d="M8 10V7a4 4 0 0 1 8 0v3" /></svg>
+                <input id="login-password" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" required />
+                <button class="password-toggle" type="button" data-toggle-password="login-password" aria-label="Show password" aria-pressed="false">
+                  <svg class="eye-open" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z" /><circle cx="12" cy="12" r="2.5" /></svg>
+                  <svg class="eye-closed" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 3 18 18M10.6 6.1A10 10 0 0 1 12 6c6.5 0 10 6 10 6a16 16 0 0 1-3 3.6M6.1 6.1C3.4 7.8 2 12 2 12s3.5 6 10 6a10 10 0 0 0 3.1-.5" /></svg>
+                </button>
+              </div>
+              <p class="field-error" id="login-password-error"></p>
+            </div>
+
+            <label class="check-row" for="remember-me">
+              <input id="remember-me" name="remember" type="checkbox" />
+              <span class="custom-check" aria-hidden="true">
+                <svg viewBox="0 0 12 10"><path d="m1 5 3 3 7-7" /></svg>
+              </span>
+              <span>Remember me on this device</span>
+            </label>
+
+            <button class="primary-button" type="submit">
+              <span>Log in securely</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M14 7l5 5-5 5" /></svg>
+            </button>
+          </form>
+
+          <section class="demo-login" aria-labelledby="demo-login-title">
+            <div class="demo-login-head"><span></span><h3 id="demo-login-title">Demo Login Accounts</h3><span></span></div>
+            <p>Select a role to automatically fill the demo credentials.</p>
+            <div class="demo-login-grid">
+              <button type="button" data-demo-account="Admin"><span class="demo-role-icon">A</span><span><strong>Admin Demo</strong><small>System administration</small></span></button>
+              <button type="button" data-demo-account="Doctor"><span class="demo-role-icon">D</span><span><strong>Doctor Demo</strong><small>Clinical workspace</small></span></button>
+              <button type="button" data-demo-account="Laboratory Staff"><span class="demo-role-icon">L</span><span><strong>Laboratory Staff Demo</strong><small>Laboratory operations</small></span></button>
+              <button type="button" data-demo-account="Patient"><span class="demo-role-icon">P</span><span><strong>Patient Demo</strong><small>Personal health portal</small></span></button>
+            </div>
+          </section>
+
+          <p class="form-switch">New to the clinic system? <a href="patient-registration.html">Create a patient account</a></p>
+        </div>
+
+        <div class="form-card registration-card" id="register-screen" hidden>
+          <header class="form-header compact-header">
+            <span class="section-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M15 20a7 7 0 0 0-14 0M8 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM19 8v8M15 12h8" /></svg>
+            </span>
+            <p class="eyebrow">Join your care community</p>
+            <h2>Create your account</h2>
+            <p>Enter your details to get started with Clinic Management.</p>
+          </header>
+
+          <div class="status-message" role="status" aria-live="polite"></div>
+
+          <form id="register-form" novalidate>
+            <div class="field-grid">
+              <div class="field full-width">
+                <label for="full-name">Full name</label>
+                <div class="input-wrap">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 21a8 8 0 0 0-16 0M12 13a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z" /></svg>
+                  <input id="full-name" name="fullName" type="text" autocomplete="name" placeholder="e.g. Alex Morgan" required minlength="2" />
+                </div>
+                <p class="field-error" id="full-name-error"></p>
+              </div>
+
+              <div class="field full-width">
+                <label for="email">Email address</label>
+                <div class="input-wrap">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4zM4 7l8 6 8-6" /></svg>
+                  <input id="email" name="email" type="email" autocomplete="email" placeholder="alex@example.com" required />
+                </div>
+                <p class="field-error" id="email-error"></p>
+              </div>
+
+              <div class="field">
+                <label for="contact-number">Contact number</label>
+                <div class="input-wrap">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3H4a1 1 0 0 0-1 1c0 9.4 7.6 17 17 17a1 1 0 0 0 1-1v-3l-5-2-1.5 3a16 16 0 0 1-8.5-8.5L9 8 7 3Z" /></svg>
+                  <input id="contact-number" name="contact" type="tel" autocomplete="tel" inputmode="tel" placeholder="0912 345 6789" required />
+                </div>
+                <p class="field-error" id="contact-number-error"></p>
+              </div>
+
+              <div class="field">
+                <label for="username">Username</label>
+                <div class="input-wrap">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4" /><path d="M5 21a7 7 0 0 1 14 0" /></svg>
+                  <input id="username" name="username" type="text" autocomplete="username" placeholder="alexmorgan" required minlength="3" />
+                </div>
+                <p class="field-error" id="username-error"></p>
+              </div>
+
+              <div class="field">
+                <label for="register-password">Password</label>
+                <div class="input-wrap">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2" /><path d="M8 10V7a4 4 0 0 1 8 0v3" /></svg>
+                  <input id="register-password" name="password" type="password" autocomplete="new-password" placeholder="At least 8 characters" required minlength="8" />
+                  <button class="password-toggle" type="button" data-toggle-password="register-password" aria-label="Show password" aria-pressed="false">
+                    <svg class="eye-open" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z" /><circle cx="12" cy="12" r="2.5" /></svg>
+                    <svg class="eye-closed" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 3 18 18M10.6 6.1A10 10 0 0 1 12 6c6.5 0 10 6 10 6a16 16 0 0 1-3 3.6M6.1 6.1C3.4 7.8 2 12 2 12s3.5 6 10 6a10 10 0 0 0 3.1-.5" /></svg>
+                  </button>
+                </div>
+                <p class="field-error" id="register-password-error"></p>
+              </div>
+
+              <div class="field">
+                <label for="confirm-password">Confirm password</label>
+                <div class="input-wrap">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2" /><path d="M8 10V7a4 4 0 0 1 8 0v3" /></svg>
+                  <input id="confirm-password" name="confirmPassword" type="password" autocomplete="new-password" placeholder="Repeat your password" required />
+                  <button class="password-toggle" type="button" data-toggle-password="confirm-password" aria-label="Show password" aria-pressed="false">
+                    <svg class="eye-open" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z" /><circle cx="12" cy="12" r="2.5" /></svg>
+                    <svg class="eye-closed" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 3 18 18M10.6 6.1A10 10 0 0 1 12 6c6.5 0 10 6 10 6a16 16 0 0 1-3 3.6M6.1 6.1C3.4 7.8 2 12 2 12s3.5 6 10 6a10 10 0 0 0 3.1-.5" /></svg>
+                  </button>
+                </div>
+                <p class="field-error" id="confirm-password-error"></p>
+              </div>
+
+            </div>
+
+            <input type="hidden" name="role" value="patient" />
+
+            <div class="field terms-field">
+              <label class="check-row" for="terms">
+                <input id="terms" name="terms" type="checkbox" required />
+                <span class="custom-check" aria-hidden="true"><svg viewBox="0 0 12 10"><path d="m1 5 3 3 7-7" /></svg></span>
+                <span>I agree to the <a href="#terms">Terms &amp; Conditions</a> and <a href="#privacy">Privacy Policy</a>.</span>
+              </label>
+              <p class="field-error" id="terms-error"></p>
+            </div>
+
+            <button class="primary-button" type="submit">
+              <span>Create account</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M14 7l5 5-5 5" /></svg>
+            </button>
+          </form>
+
+          <p class="form-switch">Already have an account? <a href="#login" data-screen-link="login">Back to login</a></p>
+        </div>
+
+        <footer>© <span id="current-year"></span> Clinic Management System · Your privacy matters</footer>
+      </section>
+    </main>
+
+    <script src="auth.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

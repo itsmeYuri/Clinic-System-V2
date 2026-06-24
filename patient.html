@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Secure Clinic Management System patient portal" />
+    <title>Patient Dashboard | Clinic Management System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="admin.css" />
+    <link rel="stylesheet" href="patient.css" />
+  </head>
+  <body data-required-role="Patient">
+    <div class="admin-app patient-app">
+      <aside class="sidebar" id="sidebar" aria-label="Patient portal navigation">
+        <div class="sidebar-head">
+          <a class="admin-brand" href="#dashboard" aria-label="Clinic Management System patient dashboard"><span class="admin-brand-mark" data-icon="medical"></span><span><strong>Clinic Management</strong><small>Patient portal</small></span></a>
+          <button class="icon-button close-sidebar" type="button" aria-label="Close navigation" data-close-sidebar data-icon-button="close"></button>
+        </div>
+        <nav class="sidebar-nav patient-sidebar-nav">
+          <p class="nav-label">My health records</p>
+          <a href="#dashboard" class="nav-item active" data-page="dashboard" data-icon-name="dashboard"><span>Dashboard</span></a>
+          <a href="#orders" class="nav-item" data-page="orders" data-icon-name="orders"><span>My Orders</span><b class="nav-count">8</b></a>
+          <a href="#results" class="nav-item" data-page="results" data-icon-name="results"><span>My Results</span><b class="nav-count">4</b></a>
+          <a href="#notifications" class="nav-item" data-page="notifications" data-icon-name="bell"><span>Notifications</span><b class="nav-count">4</b></a>
+          <p class="nav-label nav-label-spaced">My account</p>
+          <a href="#profile" class="nav-item" data-page="profile" data-icon-name="user"><span>Profile</span></a>
+          <a href="#settings" class="nav-item" data-page="settings" data-icon-name="settings"><span>Settings</span></a>
+        </nav>
+        <div class="patient-privacy-card">
+          <div class="privacy-illustration">
+            <svg viewBox="0 0 210 82" aria-hidden="true"><path d="M42 73V35l45-20 46 20v38" fill="#fff" stroke="#9fd8d4" stroke-width="3"/><path d="M78 28h17v13h13v17H95v13H78V58H65V41h13V28Z" fill="#0aa397"/><path d="M25 73h125" stroke="#6fc5be" stroke-width="4" stroke-linecap="round"/><path d="M168 22s22 7 22 24c0 17-22 27-22 27s-22-10-22-27c0-17 22-24 22-24Z" fill="#fff" stroke="#29a99f" stroke-width="3"/><path d="m158 47 7 7 13-16" fill="none" stroke="#0aa397" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <strong>Your health information is secure and private.</strong>
+          <span>Only records linked to your profile are shown.</span>
+        </div>
+        <a class="sidebar-logout" href="index.html" data-icon-name="logout"><span>Log out</span></a>
+      </aside>
+      <div class="sidebar-scrim" data-close-sidebar></div>
+      <div class="admin-main">
+        <header class="topbar">
+          <div class="topbar-title"><button class="icon-button menu-button" type="button" aria-label="Open navigation" aria-controls="sidebar" data-open-sidebar data-icon-button="menu"></button><div><span>Patient Portal</span><h1 id="page-title">Patient Dashboard</h1></div></div>
+          <div class="topbar-actions">
+            <label class="global-search"><span class="sr-only">Search personal records</span><i data-icon="search"></i><input id="global-search" type="search" placeholder="Search my orders, results, notifications..." autocomplete="off" /><kbd>⌘ K</kbd></label>
+            <button class="icon-button notification-button" type="button" aria-label="View 4 unread notifications" data-go-page="notifications" data-icon-button="bell"><span class="notification-count">4</span></button>
+            <div class="profile-menu-wrap"><button class="profile-button" type="button" aria-expanded="false" data-profile-toggle><span class="avatar avatar-pink">SJ</span><span class="profile-copy"><strong>Sarah Johnson</strong><small>Patient</small></span><i data-icon="chevron"></i></button><div class="profile-dropdown" hidden><button type="button" data-go-page="profile" data-icon-name="user">My profile</button><button type="button" data-go-page="settings" data-icon-name="settings">Account settings</button><a href="index.html" data-icon-name="logout">Log out</a></div></div>
+          </div>
+        </header>
+        <main class="page-content" id="page-content" tabindex="-1"></main>
+      </div>
+      <div class="drawer-scrim" data-close-drawer></div>
+      <aside class="drawer" id="patient-drawer" aria-hidden="true" aria-labelledby="drawer-title"><div class="drawer-head"><div><p class="eyebrow">My Secure Health Record</p><h2 id="drawer-title">Details</h2></div><button class="icon-button" type="button" aria-label="Close panel" data-close-drawer data-icon-button="close"></button></div><div class="drawer-body" id="drawer-body"></div></aside>
+      <div class="toast-region" aria-live="polite" aria-atomic="true"></div>
+    </div>
+    <script src="clinic-store.js"></script>
+    <script src="auth.js"></script>
+    <script src="patient.js"></script>
+  </body>
+</html>
